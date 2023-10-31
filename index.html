@@ -47,7 +47,7 @@
               into a Visual 3D World Model For Robotics</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                Jad Abou-Chakra<sup>1</sup>,</span>
+                <a href="https://jadchakra.github.io/">Jad Abou-Chakra</a><sup>1</sup>,</span>
               <span class="author-block">
                 Krishan Rana<sup>1</sup>,</span>
               <span class="author-block">
@@ -62,6 +62,27 @@
               <span class="author-block"><sup>1</sup>Queensland University of Technology,</span>
               <span class="author-block"><sup>2</sup>University of Adelaide</span>
             </div>
+
+            <!-- <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2011.12948" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2011.12948" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+              </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -90,47 +111,57 @@
         <div class="column is-four-fifths">
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
+
             <p>
-              Predictive modelling is vital for robotic manipulation, assisting an agent to plan actions to achieve its
-              goals. many studies have leaned on <i>visual</i> representations like 2d images or 3d neural radiance
-              fields for state representation. however, they often lack the ability to effectively represent and reason
-              over <b>physical</b> phenomena such as gravity, forces, velocities, collisions, or rigidity, limiting
-              interpretability and prediction stability over longer time horizons. We enhance the state representation
-              by combining visual data with explicit physical, structural, and kinematic priors. We forge a connection
-              between a particle-based physics simulator and a visual scene representation that harnesses Gaussian
-              Splatting.
+              Robots require a "mental model" of the world to anticipate and plan for future interactions. This model should capture and reason over physical phenomena such as collisions, forces, and object properties. Current representations compress the 3D structure of the world into latent vectors limiting their ability to incorporate known physical priors. This requires them to learn these known physical priors soley from data.
             </p>
+
             <p>
-              Our core innovation is a dual <i>Gaussian-Particle</i> model that facilitates the synthesis of real-world
-              data into a simulation, enabling differentiable parameter updates and integration with a model predictive
-              control pipeline.
+            We build on our earlier work <a href="https://sites.google.com/view/particlenerf">ParticleNeRF</a> which combines NeRFs with a particle-based physics system that maintains the 3D structure of the world. This allows us to directly incorporate explicit physical, structural, and kinematic priors. Our dual <i>Gaussian-Particle</i> model provides a bidirectional bridge to update our world model with observations from the real world.
             </p>
           </div>
         </div>
       </div>
-      <!--/ Abstract. -->
-    </div>
 
-    <div class="container is-max-desktop">
+      <!--/ Abstract. -->
+
+
+
+
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Method</h2>
-          <figure class="image">
-            <img src="./static/images/method.png" alt="Method">
-            <figcaption>
-                <p style="text-align: left;">
-              Our dual <i>Gaussian-Particle</i> representation captures visual (Gaussians) and physical (particles)
-              aspects of the world and enables forward prediction of robot interactions with the world.
-              A photometric loss between rendered Gaussians and observed images is computed (Gaussian Splatting, left)
-              and converted into <span class="dnerf">visual forces</span>. These and other physical phenomena such as
-              gravity, collisions, and mechanical forces are resolved by the always-active physics system (right) and
-              applied to the particles, which in turn influence the position of their associated Gaussians.
-              </p>
-            </figcaption>
+          <div class="content has-text-justified">
+
+          </div>
+
+          <figure class="image" style="margin-bottom: 2em;">
+            <img src="./static/images/modelling.png" alt="Method" />
           </figure>
+
+          <p style="text-align: left; margin-bottom: 2em;">
+            <b>Modelling Step</b> To initialize the system, the robot scans the environment with an RGBD camera and initializes particles based on the point cloud data. Semantic information is provided by a segmention network and used to induce objectness between particles. Particles representing the robot itself are initialised based on the kinematic state and a URDF model of the robot. Finally, particles are used to initialise Gaussians in their proximity.
+          </p>
+
+          <figure class="image" style="margin-bottom: 2em;">
+            <img src="./static/images/method.png" alt="Method">
+          </figure>
+
+          <p style="text-align: left;">
+            <b>Update Step</b> Our dual <i>Gaussian-Particle</i> representation captures visual (Gaussians) and physical (particles)
+            aspects of the world and enables forward prediction of robot interactions with the world.
+            A photometric loss between rendered Gaussians and observed images is computed (Gaussian Splatting, left)
+            and converted into <span class="dnerf">visual forces</span>. These and other physical phenomena such as
+            gravity, collisions, and mechanical forces are resolved by the always-active physics system (right) and
+            applied to the particles, which in turn influence the position of their associated Gaussians.
+          </p>
+
         </div>
       </div>
+
+
     </div>
+
   </section>
 
   <section class="section">
@@ -161,18 +192,18 @@
 
   <footer class="footer">
 
-      <div class="columns is-centered">
-        <div class="column is-8">
-          <div class="content">
-            <p>
-              Template based on <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a> website.
-              This website is licensed under a <a rel="license"
-                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-                Commons Attribution-ShareAlike 4.0 International License</a>.
-            </p>
-          </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Template based on <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a> website.
+            This website is licensed under a <a rel="license"
+              href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
         </div>
       </div>
+    </div>
     </div>
   </footer>
 
