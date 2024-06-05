@@ -43,46 +43,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Physically Embodied Gaussian Splatting: Embedding Physical Priors
-              into a Visual 3D World Model For Robotics</h1>
-            <div class="is-size-5 publication-authors">
-              <span class="author-block">
-                <a href="https://jadchakra.github.io/">Jad Abou-Chakra</a><sup>1</sup>,</span>
-              <span class="author-block">
-                Krishan Rana<sup>1</sup>,</span>
-              <span class="author-block">
-                Feras Dayoub<sup>2</sup>,
-              </span>
-              <span class="author-block">
-                Niko Sünderhauf<sup>1</sup>,
-              </span>
-            </div>
-
-            <div class="is-size-5 publication-authors">
-              <span class="author-block"><sup>1</sup>Queensland University of Technology,</span>
-              <span class="author-block"><sup>2</sup>University of Adelaide</span>
-            </div>
-
-            <div class="column has-text-centered">
-              <div class="publication-links">
-                <span class="link-block">
-                  <a href="https://drive.google.com/file/d/1AqXmlAv9_2EyNOigsrJDJk7ejqLM5DVp/view?usp=drive_link" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                    </span>
-                    <span>Workshop Paper</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://drive.google.com/file/d/15r8ELJjh10q9umHAn7whLxFCJTsV_xF6/view?usp=drive_link" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                    </span>
-                    <span>Poster</span>
-                  </a>
-                </span>
-              </div>
-            </div>
+            <h1 class="title is-1 publication-title">Physically Embodied Gaussian Splatting:  A Realtime Correctable World Model for Robotics</h1>
           </div>
         </div>
       </div>
@@ -90,107 +51,22 @@
     </div>
   </section>
 
-
-  <section class="hero teaser">
-    <div class="container is-max-desktop">
-      <div class="hero-body">
-        <video id="teaser" autoplay muted loop playsinline height="100%">
-          <source src="./static/videos/res.mp4" type="video/mp4">
-        </video>
-        <h2 class="subtitle has-text-centered">
-          <span class="dnerf">Visual Forces</span> correcting the physical state of the scene.
-        </h2>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container is-max-desktop">
-      <!-- abstract. -->
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Abstract</h2>
-          <div class="content has-text-justified">
-
-            <p>
-              Robots require a "mental model" of the world to anticipate and plan for future interactions. This model should capture and reason over physical phenomena such as collisions, forces, and object properties. Current representations compress the 3D structure of the world into latent vectors limiting their ability to incorporate known physical priors. This requires them to learn these known physical priors soley from data.
-            </p>
-
-            <p>
-            We build on our earlier work <a href="https://sites.google.com/view/particlenerf">ParticleNeRF</a> which combines NeRFs with a particle-based physics system that maintains the 3D structure of the world. This allows us to directly incorporate explicit physical, structural, and kinematic priors. Our dual <i>Gaussian-Particle</i> model provides a bidirectional bridge to update our world model with observations from the real world.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!--/ Abstract. -->
-
-
-
-
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Method</h2>
-          <div class="content has-text-justified">
-
-          </div>
-
-          <figure class="image" style="margin-bottom: 2em;">
-            <img src="./static/images/modelling.png" alt="Method" />
-          </figure>
-
-          <p style="text-align: left; margin-bottom: 2em;">
-            <b>Modelling Step</b> To initialize the system, the robot scans the environment with an RGBD camera and initializes particles based on the point cloud data. Semantic information is provided by a segmention network and used to induce objectness between particles. Particles representing the robot itself are initialised based on the kinematic state and a URDF model of the robot. Finally, particles are used to initialise Gaussians in their proximity.
-          </p>
-
-          <figure class="image" style="margin-bottom: 2em;">
-            <img src="./static/images/method.png" alt="Method">
-          </figure>
-
-          <p style="text-align: left;">
-            <b>Update Step</b> Our dual <i>Gaussian-Particle</i> representation captures visual (Gaussians) and physical (particles)
-            aspects of the world and enables forward prediction of robot interactions with the world.
-            A photometric loss between rendered Gaussians and observed images is computed (Gaussian Splatting, left)
-            and converted into <span class="dnerf">visual forces</span>. These and other physical phenomena such as
-            gravity, collisions, and mechanical forces are resolved by the always-active physics system (right) and
-            applied to the particles, which in turn influence the position of their associated Gaussians.
-          </p>
-
-        </div>
-      </div>
-
-
-    </div>
-
-  </section>
-
-  <section class="section">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
+  <section>
+      <div class="container is-max-desktop">
         <div class="columns is-centered">
-          <div class="column is-full-width">
-            <h2 class="title is-3">Related Links</h2>
+          <div class="column has-text-centered">
+            Under Construction
 
-            <div class="content has-text-justified">
-              <p>
-                <a href="https://github.com/jc211/ParticleNeRF#particlenerf">ParticleNeRF</a> introduces the idea of
-                using particles as both the primitive for rendering NeRFs and the primitive on which a physics system
-                acts.
-              </p>
-              <p>
-                <a href="https://sites.google.com/view/PAC-NeRF">PAC-NeRF</a> also uses a combination of a physics
-                method and a NeRF rendering method for the purposes of estimating physical parameters and unknown
-                geometry.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+    </div>
+    </div>
+    </div>
+
   </section>
 
 
 
-  <footer class="footer">
+
+  <!-- <footer class="footer">
 
     <div class="columns is-centered">
       <div class="column is-8">
@@ -205,7 +81,7 @@
       </div>
     </div>
     </div>
-  </footer>
+  </footer> -->
 
 </body>
 
