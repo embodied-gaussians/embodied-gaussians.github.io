@@ -38,12 +38,13 @@
 
 <body>
 
-  <section class="hero">
+  <section>
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Physically Embodied Gaussian Splatting:  A Realtime Correctable World Model for Robotics</h1>
+            <h1 class="title is-1 publication-title">Physically Embodied Gaussian Splatting: A Realtime Correctable
+              World Model for Robotics</h1>
           </div>
         </div>
       </div>
@@ -51,50 +52,73 @@
     </div>
   </section>
 
-  <section class="hero">
+  <section class="mb-6">
     <div class="container is-max-desktop">
-      <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <video id="teaser" autoplay muted loop playsinline height="100%">
           <source src="./static/videos/hero.mp4" type="video/mp4">
         </video>
         <h2 class="subtitle has-text-centered">
-          <span class="dnerf">Our Gaussian-Particle representation constantly corrects itself to match the real world.</span>
+          <span class="dnerf">Our Gaussian-Particle representation constantly corrects itself to match the real
+            world.</span>
         </h2>
-      </div>
-      </div>
+    </div>
   </section>
 
-  <section>
+  <section class="mb-6">
     <div class="container is-max-desktop">
       <h1 class="title">Abstract</h1>
-      <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column">
-            For robots to robustly understand and interact with the physical world, it is highly beneficial to have a comprehensive representation  - modelling geometry, physics, and visual observations - that informs perception, planning, and control algorithms. We propose a novel dual "Gaussian-Particle" representation that models the physical world while (i) enabling predictive simulation of future states and (ii) allowing online correction from visual observations in a dynamic world. Our representation comprises particles that capture the geometrical aspect of objects in the world and can be used alongside a particle-based physics system to anticipate physically plausible future states. Attached to these particles are 3D Gaussians that render images from any viewpoint through a splatting process thus capturing the <i>visual</i> state. By comparing the predicted and observed images, our approach generates "visual forces" that correct the particle positions while respecting known physical constraints. By integrating predictive physical modeling with continuous visually-derived corrections, our unified representation reasons about the present and future while synchronizing with reality. We validate our approach on 2D and 3D tracking tasks as well as photometric reconstruction quality. 
-            </div>
-
+            For robots to robustly understand and interact with the physical world, it is highly beneficial to have a
+            comprehensive representation - modelling geometry, physics, and visual observations - that informs
+            perception, planning, and control algorithms. We propose a novel dual "Gaussian-Particle" representation
+            that models the physical world while (i) enabling predictive simulation of future states and (ii) allowing
+            online correction from visual observations in a dynamic world. Our representation comprises particles that
+            capture the geometrical aspect of objects in the world and can be used alongside a particle-based physics
+            system to anticipate physically plausible future states. Attached to these particles are 3D Gaussians that
+            render images from any viewpoint through a splatting process thus capturing the <i>visual</i> state. By
+            comparing the predicted and observed images, our approach generates "visual forces" that correct the
+            particle positions while respecting known physical constraints. By integrating predictive physical modeling
+            with continuous visually-derived corrections, our unified representation reasons about the present and
+            future while synchronizing with reality. We validate our approach on 2D and 3D tracking tasks as well as
+            photometric reconstruction quality.
+          </div>
+      </div>
     </div>
-    </div>
-    </div>
-
   </section>
+
+  <section class="hero">
+    <div class="container is-max-desktop">
+      <h1 class="title">Realtime Operation</h1>
+      <div class="hero-body">
+        <video id="teaser" autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/realtime.mp4" type="video/mp4">
+        </video>
+        <h2 class="subtitle has-text-centered">
+          <span class="dnerf">Our system calculating visual forces in realtime and being disrupted by the user.</span>
+        </h2>
+      </div>
+    </div>
+  </section>
+
 
   <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
-          <div class="column is-full-width">
-            <h2 class="title is-3">Related Links</h2>
+        <div class="column is-full-width">
+          <h2 class="title is-3">Related Links</h2>
 
-            <div class="content has-text-justified">
-              <p>
-                <a href="https://github.com/jc211/ParticleNeRF#particlenerf">ParticleNeRF</a> introduces the idea of
-                using particles as both the primitive for rendering NeRFs and the primitive on which a physics system
-                acts.
-              </p>
-              <p>
-                <a href="https://dynamic3dgaussians.github.io/">Dynamic 3D Gaussians</a> uses Gaussian Splatting with auxiliary structural losses to track elements in the scene. 
-              </p>
-            </div>
+          <div class="content has-text-justified">
+            <p>
+              <a href="https://github.com/jc211/ParticleNeRF#particlenerf">ParticleNeRF</a> introduces the idea of
+              using particles as both the primitive for rendering NeRFs and the primitive on which a physics system
+              acts.
+            </p>
+            <p>
+              <a href="https://dynamic3dgaussians.github.io/">Dynamic 3D Gaussians</a> uses Gaussian Splatting with
+              auxiliary structural losses to track elements in the scene.
+            </p>
+          </div>
         </div>
       </div>
   </section>
