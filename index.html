@@ -44,7 +44,54 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title">Physically Embodied Gaussian Splatting: A Realtime Correctable
-              World Model for Robotics</h1>
+              World Model for Robotics
+            </h1>
+
+
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://jadchakra.github.io/">Jad Abou-Chakra</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://krishanrana.github.io">Krishan Rana</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://ferasdayoub.com/">Feras Dayoub</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://nikosuenderhauf.github.io/">Niko Suenderhauf</a><sup>1</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>QUT Centre for Robotics</span>
+              <span class="author-block"><sup>2</sup>University of Adelaide</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://openreview.net/forum?id=AEq0onGrN2" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+  
+                <span class="link-block">
+                    <a href="#BibTex" class="external-link button is-normal is-rounded is-dark">
+                    <span>BibTex</span>
+                    </a>
+                </span>
+            </div>
+
+        <!-- <br> -->
+        <!-- <div class="is-size-5 publication-authors">
+          <span class="author-block"></span> Oral Presentation @ Conference on Robot Learning 2024</span></span>
+        </div> -->
+
           </div>
         </div>
       </div>
@@ -54,35 +101,35 @@
 
   <section class="mb-6">
     <div class="container is-max-desktop">
-        <video id="teaser" autoplay muted loop playsinline height="100%">
-          <source src="./static/videos/hero.mp4" type="video/mp4">
-        </video>
-        <h2 class="subtitle has-text-centered">
-          <span class="dnerf">Our Gaussian-Particle representation constantly corrects itself to match the real
-            world.</span>
-        </h2>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/hero.mp4" type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Our Gaussian-Particle representation constantly corrects itself to match the real
+          world.</span>
+      </h2>
     </div>
   </section>
 
   <section class="mb-6">
     <div class="container is-max-desktop">
       <h1 class="title">Abstract</h1>
-        <div class="columns is-centered">
-          <div class="column">
-            For robots to robustly understand and interact with the physical world, it is highly beneficial to have a
-            comprehensive representation - modelling geometry, physics, and visual observations - that informs
-            perception, planning, and control algorithms. We propose a novel dual "Gaussian-Particle" representation
-            that models the physical world while (i) enabling predictive simulation of future states and (ii) allowing
-            online correction from visual observations in a dynamic world. Our representation comprises particles that
-            capture the geometrical aspect of objects in the world and can be used alongside a particle-based physics
-            system to anticipate physically plausible future states. Attached to these particles are 3D Gaussians that
-            render images from any viewpoint through a splatting process thus capturing the <i>visual</i> state. By
-            comparing the predicted and observed images, our approach generates "visual forces" that correct the
-            particle positions while respecting known physical constraints. By integrating predictive physical modeling
-            with continuous visually-derived corrections, our unified representation reasons about the present and
-            future while synchronizing with reality. We validate our approach on 2D and 3D tracking tasks as well as
-            photometric reconstruction quality. Our system runs in <b>realtime</b> at 30Hz using only 3 cameras.
-          </div>
+      <div class="columns is-centered">
+        <div class="column">
+          For robots to robustly understand and interact with the physical world, it is highly beneficial to have a
+          comprehensive representation - modelling geometry, physics, and visual observations - that informs
+          perception, planning, and control algorithms. We propose a novel dual "Gaussian-Particle" representation
+          that models the physical world while (i) enabling predictive simulation of future states and (ii) allowing
+          online correction from visual observations in a dynamic world. Our representation comprises particles that
+          capture the geometrical aspect of objects in the world and can be used alongside a particle-based physics
+          system to anticipate physically plausible future states. Attached to these particles are 3D Gaussians that
+          render images from any viewpoint through a splatting process thus capturing the <i>visual</i> state. By
+          comparing the predicted and observed images, our approach generates "visual forces" that correct the
+          particle positions while respecting known physical constraints. By integrating predictive physical modeling
+          with continuous visually-derived corrections, our unified representation reasons about the present and
+          future while synchronizing with reality. We validate our approach on 2D and 3D tracking tasks as well as
+          photometric reconstruction quality. Our system runs in <b>realtime</b> at 30Hz using only 3 cameras.
+        </div>
       </div>
     </div>
   </section>
@@ -90,12 +137,13 @@
   <section class="mb-6">
     <div class="container is-max-desktop">
       <h1 class="title">Realtime Operation</h1>
-        <video id="realtime" autoplay muted loop playsinline height="100%">
-          <source src="./static/videos/realtime.mp4" type="video/mp4">
-        </video>
-        <h2 class="subtitle has-text-centered">
-          <span class="dnerf">Our system calculating visual forces in <b>realtime</b> and being disrupted by the user.</span>
-        </h2>
+      <video id="realtime" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/realtime.mp4" type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Our system calculating visual forces in <b>realtime</b> and being disrupted by the
+          user.</span>
+      </h2>
     </div>
   </section>
 
@@ -132,7 +180,8 @@
             <source src="./static/videos/pushover.mp4" type="video/mp4">
           </video>
           <h2 class="subtitle has-text-centered">
-            <span class="dnerf">The TBlock is pushed over by the robot and the gravity prior is able to keep the block within the corrective ability of the visual forces.</span>
+            <span class="dnerf">The TBlock is pushed over by the robot and the gravity prior is able to keep the block
+              within the corrective ability of the visual forces.</span>
           </h2>
         </div>
       </div>
@@ -144,11 +193,12 @@
       <h1 class="title">Pickup</h1>
       <div class="columns is-centered">
         <div class="column">
-          <video  autoplay muted loop playsinline height="100%">
+          <video autoplay muted loop playsinline height="100%">
             <source src="./static/videos/pickup.mp4" type="video/mp4">
           </video>
           <h2 class="subtitle has-text-centered">
-            <span class="dnerf">A mug is slightly pushed by the robot before being picked up. Both the push and the pickup are captured by the representation. </span>
+            <span class="dnerf">A mug is slightly pushed by the robot before being picked up. Both the push and the
+              pickup are captured by the representation. </span>
           </h2>
         </div>
       </div>
@@ -164,19 +214,20 @@
             <source src="./static/videos/rope.mp4" type="video/mp4">
           </video>
           <h2 class="subtitle has-text-centered">
-            <span class="dnerf">The Gaussian-Particle representation synchronizing with a rope as it is deformed. </span>
+            <span class="dnerf">The Gaussian-Particle representation synchronizing with a rope as it is deformed.
+            </span>
           </h2>
         </div>
       </div>
     </div>
-  </section>  
-  
+  </section>
+
   <section class="mb-6">
     <div class="container is-max-desktop">
       <h1 class="title">Multiple Objects</h1>
       <div class="columns is-centered">
         <div class="column">
-          <video  autoplay muted loop playsinline height="100%">
+          <video autoplay muted loop playsinline height="100%">
             <source src="./static/videos/multiple.mp4" type="video/mp4">
           </video>
           <h2 class="subtitle has-text-centered">
@@ -192,7 +243,7 @@
       <h1 class="title">Complex Object</h1>
       <div class="columns is-centered">
         <div class="column">
-          <video  autoplay muted loop playsinline height="100%">
+          <video autoplay muted loop playsinline height="100%">
             <source src="./static/videos/single.mp4" type="video/mp4">
           </video>
           <h2 class="subtitle has-text-centered">
@@ -217,7 +268,7 @@
 
       <div class="columns is-centered">
         <div class="column">
-          <video  autoplay muted loop playsinline height="100%">
+          <video autoplay muted loop playsinline height="100%">
             <source src="./static/videos/sim_multiple.mp4" type="video/mp4">
           </video>
         </div>
@@ -247,11 +298,9 @@
         </div>
       </div>
 
-      </div>
+    </div>
     </div>
   </section>
-
-
 
 
   <section class="section">
@@ -275,9 +324,21 @@
       </div>
   </section>
 
+  <section class="section" id="BibTex">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Citation</h2>
+    <pre><code>@inproceedings{
+        abou-chakra2024physically,
+        title={Physically Embodied Gaussian Splatting: A Realtime Correctable World Model for Robotics},
+        author={Jad Abou-Chakra and Krishan Rana and Feras Dayoub and Niko Suenderhauf},
+        booktitle={8th Annual Conference on Robot Learning},
+        year={2024},
+        url={https://openreview.net/forum?id=AEq0onGrN2}
+        }</code></pre>
+  </div>
+  </section>
 
-
-   <footer class="footer">
+  <footer class="footer">
 
     <div class="columns is-centered">
       <div class="column is-8">
